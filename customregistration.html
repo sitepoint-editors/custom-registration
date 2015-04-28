@@ -1,0 +1,32 @@
+<head>
+    <title>Custom Registration Tutorial</title>
+</head>
+<body>
+    {{#if currentUser}}
+        {{> dashboard}}
+    {{else}}
+        {{> register}}
+        {{> login}}
+    {{/if}}
+</body>
+
+<template name="dashboard">
+    <p>You're logged in.</p>
+    <p><a href="#" class="logout">Logout</a></p>
+</template>
+
+<template name="register">
+    <form>
+        <input type="email" name="registerEmail">
+        <input type="password" name="registerPassword">
+        <input type="submit" value="Register">
+    </form>
+</template>
+
+<template name="login">
+    <form>
+        <input type="email" name="loginEmail">
+        <input type="password" name="loginPassword">
+        <input type="submit" value="Login">
+    </form>
+</template>
